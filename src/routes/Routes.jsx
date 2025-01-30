@@ -7,6 +7,7 @@ import More from "../pages/More/More";
 import Login from "../pages/Login/Login";
 import HomeDetails from "../pages/HomeDetails/HomeDetails";
 import Register from "../pages/Register/Register";
+import PrivateRouter from "./privateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: '/:id',
                 loader: ({params})=>fetch(`https://api2-kohl.vercel.app/allhouses/${params.id}`),
-                element:<HomeDetails></HomeDetails>
+                element:<PrivateRouter><HomeDetails></HomeDetails></PrivateRouter>
             },
             {
                 path: '/login',

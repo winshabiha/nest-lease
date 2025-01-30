@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink} from 'react-router-dom';
 import userProfile from '../../assets/userProfile.png'
 import { LuLogIn } from "react-icons/lu";
+import { authContext } from '../../providers/AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Navbar = () => {
+    const {user,logOut} = useContext(authContext)
+    const handleLogOut=()=>{
+        logOut()
+        .then(result=>{
+            toast("logged out successfully")
+        })
+        .catch(err=>console.log(err.massege))
+    }
     const list = <>
         <NavLink  to='/'><a>Home</a></NavLink >
         <NavLink to='/about'><a>About</a></NavLink>
@@ -42,9 +52,19 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-3">
-                <img className='h-12' src={userProfile} alt="" />
-                <Link to='/login'><button className="btn btn-primary">Login<LuLogIn className='text-lg' /></button></Link>
+                {
+                    user ? <div className='flex gap-2'>
+                        <button className="btn btn-primary" onClick={handleLogOut}>Logout<LuLogIn className='text-lg' /></button>
+                        <img className='h-12' src={user.photoURL} alt="" />
+
+                    </div> : <div className='flex gap-2'>
+                    <img className='h-12' src={userProfile} alt="" />
+                    <Link to='/login'><button className="btn btn-primary">Login<LuLogIn className='text-lg' /></button></Link>
+                    </div>
+                }
+                
             </div>
+            <ToastContainer />
         </div>
     );
 };
