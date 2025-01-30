@@ -10,7 +10,7 @@ const ValuableClients = () => {
         <div>
             <h1 className='text-4xl font-bold text-blue-700 mt-32 text-center'>Our Valuable Clients</h1>
             <p className='text-xl font-bold  mb-10 text-center'>Enjoyed our pleasant service</p>
-            <div className='flex gap-28 items-center'>
+            <div className='grid md:grid-cols-5 sm:grid-cols-1 justify-center gap-28 items-center'>
                 <img className='h-12 w-42' src={client1} alt="" />
                 <img className='h-12 w-42' src={client2}  alt="" />
                 <img className='h-12 w-42' src={client3}  alt="" />

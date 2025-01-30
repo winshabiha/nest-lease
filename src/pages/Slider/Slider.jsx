@@ -21,39 +21,8 @@ const Slider = () => {
 
         <div className='mt-28'>
             <p className='text-4xl font-bold text-blue-700 mb-5 text-center'> Types of Property</p>
-            {/* <div className='grid grid-cols-2'> */}
-            {/* {
-                    allHomes.map((homes, index) => <div key={index} className=' mb-10'>
 
-
-                            <div className="card bg-base-100 w-[500px] shadow-xl">
-                                <figure className="px-10 pt-10">
-                                <img className='h-[300px] w-[400px] rounded-2xl' src={homes.image} alt="" />
-                                </figure>
-                                <div className="card-body">
-                                <h2 className="card-title">{homes.house_title}</h2>
-                                <div className='flex justify-between mt-3'>
-                                    <div>
-                                        <p className='font-semibold flex gap-2 items-center'><FaFeatherPointed className='text-blue-600' />{homes.segment_name}</p>
-                                        <p className='font-semibold mx-5'>{homes.rent}</p>
-                                    </div>
-                                    <div>
-                                        <p className='font-semibold flex gap-2 items-center'><FaLocationDot className='text-blue-600' />{homes.location}</p>
-                                        <p className='font-semibold mx-5'>{homes.area}</p>
-                                    </div>
-
-                                </div>
-                                <div className='mx-4 my-4'>{(homes.description).slice(0, 150)}...<span className='text-red-600 font-semibold'><Link to={`/${homes.id}`}>Details</Link></span></div>
-                                <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Watch</button>
-                                </div>
-                            </div>
-                            </div>
-                    </div>)
-                } */}
-            {/* </div> */}
-
-            <div className='mt-8 grid grid-cols-2 gap-10'>
+            <div className='mt-8 grid md:grid-cols-2 sm:grid-cols-1 gap-10'>
                 {
                     allHomes.length ? allHomes.slice(0, value).map(homes => <Homes homes={homes} key={homes._id}></Homes>) : <div className='grid grid-cols-3 gap-96'>
                         <div className="flex w-52 flex-col gap-4">
