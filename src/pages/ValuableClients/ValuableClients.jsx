@@ -7,7 +7,7 @@ import client5 from '../../assets/client_5.png'
 
 const ValuableClients = () => {
     return (
-        <div>
+        <div className='mt-10 mb-30'>
             <h1 className='text-4xl font-bold text-blue-700 mt-32 text-center'>Our Valuable Clients</h1>
             <p className='text-xl font-bold  mb-10 text-center'>Enjoyed our pleasant service</p>
             <div className='grid md:grid-cols-5 sm:grid-cols-1 justify-center gap-28 items-center'>

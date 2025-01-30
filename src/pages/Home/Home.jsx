@@ -6,6 +6,7 @@ import PropertiesType from '../PropertiesType/PropertiesType';
 import ValuableClients from '../ValuableClients/ValuableClients';
 import Footer from '../Footer/Footer';
 import Banner from '../Banner/Banner';
+import NewSection from '../newSection/NewSection';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Banner></Banner>
             <PropertiesType></PropertiesType>
             <Slider></Slider>
+            <NewSection></NewSection>
             <ValuableClients></ValuableClients>
             <Footer></Footer>
         </div>
